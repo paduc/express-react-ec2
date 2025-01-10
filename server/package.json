@@ -11,8 +11,13 @@
     "dev": "tsx watch main.ts"
   },
   "dependencies": {
+    "@trpc/server": "^10.45.2",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.10.5",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "tsx": "^4.3.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.7.2",
+    "zod": "^3.24.1"
   }
 }
