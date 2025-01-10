@@ -19,33 +19,25 @@ npx tailwindcss init -p
 yarn add -D @types/node
 ```
 
-## Shadcn/ui: Changed alias in tsconfig.json
-
+## Created index.css in app/src
 ```
-"baseUrl": ".",
-"paths": {
-  "@/*": ["app/src/*"]
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-## Shadcn/ui: Changed alias in vite.config.ts
+## Removed script in index.html
 
 ```
-resolve: {
-  alias: {
-    "@": path.resolve(__dirname, "./src/client"),
-  },
-},
+<script src="https://cdn.tailwindcss.com"></script>
 ```
 
-## Added shadcn/ui
-
+## Added content in tailwind.config.js
 ```
-npx shadcn@latest init
+content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 ```
 
-## Added a button from shadcn/ui
-
+## Imported index.css in main.tsx
 ```
-npx shadcn@latest add button
+import './index.css'
 ```
