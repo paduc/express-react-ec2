@@ -52,3 +52,5 @@ npx shadcn@latest init
 ```
 npx shadcn@latest add button
 ```
+
+## Started server with minimal express server, launched with tsx
