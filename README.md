@@ -41,3 +41,14 @@ content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 ```
 import './index.css'
 ```
+
+## Called shadcn/ui
+```
+npx shadcn@latest init
+```
+
+## Added a button from shadcn/ui
+
+```
+npx shadcn@latest add button
+```
