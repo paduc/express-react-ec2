@@ -1,4 +1,37 @@
-## Started with TanStack Router 
+# React + TypeScript + Tailwind CSS + TanStack Router + tRPC
+
+## Local development
+
+### Start the app
+```
+cd app
+yarn dev
+```
+
+### Start the server
+```
+cd server
+yarn dev
+```
+
+### Open the app in the browser
+```
+open http://localhost:3001
+```
+
+## Production
+
+```
+cd app
+yarn install
+yarn build
+
+cd ../server
+yarn install
+yarn start
+```
+
+## History
 
 ```
 yarn create @tanstack/router
