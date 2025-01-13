@@ -38,52 +38,66 @@ yarn create @tanstack/router
 ```
 chose vite
 
-## Installed tailwind
+### Installed tailwind
 
 ```
 yarn add -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-## Moved tsconfig.json to root
+### Moved tsconfig.json to root
 
-## Fix error in vite.config.ts
+### Fix error in vite.config.ts
 ```
 yarn add -D @types/node
 ```
 
-## Created index.css in app/src
+### Created index.css in app/src
 ```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-## Removed script in index.html
+### Removed script in index.html
 
 ```
 <script src="https://cdn.tailwindcss.com"></script>
 ```
 
-## Added content in tailwind.config.js
+### Added content in tailwind.config.js
 ```
 content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 ```
 
-## Imported index.css in main.tsx
+### Imported index.css in main.tsx
 ```
 import './index.css'
 ```
 
-## Called shadcn/ui
+### Called shadcn/ui
 ```
 npx shadcn@latest init
 ```
 
-## Added a button from shadcn/ui
+### Added a button from shadcn/ui
 
 ```
 npx shadcn@latest add button
 ```
 
-## Started server with minimal express server, launched with tsx
+### Started server with minimal express server, launched with tsx
+
+## How to configure AWS ECR/ECS/Fargate
+
+### Create a Docker image
+
+```
+docker build -t wavo-app .
+```
+
+### Run the Docker image
+
+```
+docker run -it -p 3000:3000 wavo-app
+```
