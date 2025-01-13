@@ -17,7 +17,9 @@ let counter = 0;
 
 export const appRouter = router({
   getCounter: publicProcedure
-    .query(() => ({ count: counter })),
+    .query(() => {
+      return ({ count: counter })
+    } ),
     
   incrementCounter: publicProcedure
     .mutation(() => {

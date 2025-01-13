@@ -8,6 +8,7 @@
   "main": "main.ts",
   "scripts": {
     "start": "NODE_ENV=production pm2 start main.ts --interpreter tsx",
+    "launch": "NODE_ENV=production PORT=3002 tsx main.ts",
     "dev": "tsx watch main.ts"
   },
   "dependencies": {

@@ -4,29 +4,23 @@ import { appRouter } from './api';
 import cors from 'cors';
 
 const app = express();
-
-if(process.env.NODE_ENV == 'production') {
-  app.use(express.static('../app/dist'));
-} 
-else{
-  app.use(cors({
-    // origin: ['http://localhost:5173', 'https://yourdomain.com'],
-    // credentials: true,
-  }));
-} 
-
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
-// Makes the app crach
-app.get("/crash", (req, res) => {
-  process.exit(1);
-});
+const port = Number(process.env.PORT) || 3000;
 
 app.use('/api', createExpressMiddleware({ router: appRouter }));
 
-app.listen(Number(process.env.PORT) || 3000, () =>
-  console.log("Server is listening on port 3000..."),
+if(process.env.NODE_ENV == 'production') {
+  console.log('Production mode');
+  app.use(express.static('../app/dist'));
+
+  app.get('*', (req, res) => {
+    res.sendFile('index.html', { root: '../app/dist' });
+  });
+} 
+else{
+  console.log('Development mode');
+  app.use(cors());
+} 
+
+app.listen(port, () =>
+  console.log(`Server is listening on port ${port}...`),
 );
